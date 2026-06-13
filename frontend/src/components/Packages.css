@@ -1,0 +1,242 @@
+.packages {
+  background-color: #F8F9FA;
+  padding: 60px 0;
+}
+
+.packages-main-title {
+  text-align: center;
+  font-size: 28px;
+  color: var(--primary-color);
+  margin-bottom: 32px;
+  font-weight: 700;
+}
+
+.packages-tabs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 40px;
+}
+
+.package-tab {
+  background: #fff;
+  border: 1px solid var(--border-color);
+  padding: 8px 24px;
+  border-radius: 24px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.package-tab.active {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+  box-shadow: 0 4px 12px rgba(0, 160, 168, 0.1);
+}
+
+.advanced-packages-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 24px;
+}
+
+.advanced-card {
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.advanced-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.adv-card-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  padding-bottom: 0;
+  margin-bottom: 16px;
+}
+
+.adv-card-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #333;
+  line-height: 1.4;
+  flex: 1;
+  padding-right: 16px;
+}
+
+.adv-test-badge {
+  background: #E8FFFE;
+  color: var(--primary-color);
+  padding: 8px 12px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 60px;
+}
+
+.adv-test-badge strong {
+  font-size: 20px;
+  line-height: 1;
+}
+
+.adv-test-badge span {
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.adv-card-body {
+  padding: 0 20px 20px 20px;
+  flex: 1;
+}
+
+.adv-tests-included {
+  font-size: 12px;
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px dashed var(--border-color);
+}
+
+.adv-tests-included strong {
+  color: #333;
+}
+
+.more-link {
+  color: #333;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.adv-card-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.know-more-link {
+  color: var(--primary-color);
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.members-select {
+  background: #E8FFFE;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  color: #333;
+  outline: none;
+}
+
+.add-more-banner {
+  text-align: center;
+  font-size: 11px;
+  color: #666;
+  padding-bottom: 16px;
+  border-bottom: 1px dashed var(--border-color);
+  margin-bottom: 16px;
+}
+
+.add-more-banner strong {
+  color: #52c41a;
+}
+
+.adv-card-icons {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.adv-icon-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 4px;
+  flex: 1;
+}
+
+.icon-teal {
+  color: var(--primary-color);
+}
+
+.adv-icon-item span {
+  font-size: 10px;
+  color: #888;
+  line-height: 1.2;
+}
+
+.adv-card-footer {
+  background: #E8FFFE;
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.adv-price-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.adv-current-price {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--primary-color);
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+
+.per-person {
+  font-size: 12px;
+  font-weight: 400;
+  color: #666;
+}
+
+.adv-original-price {
+  font-size: 14px;
+  color: #333;
+  font-weight: 600;
+}
+
+.strike {
+  text-decoration: line-through;
+  color: #999;
+  font-weight: 400;
+  margin-left: 4px;
+}
+
+.discount-tag {
+  color: #F16948;
+  font-size: 11px;
+  font-weight: 700;
+  margin-top: 4px;
+}
+
+.adv-book-btn {
+  background-color: var(--primary-color);
+  padding: 10px 24px;
+  border-radius: 6px;
+  font-size: 14px;
+}

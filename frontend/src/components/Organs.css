@@ -1,0 +1,65 @@
+.organs {
+  background-color: var(--background-primary);
+  padding: 60px 0;
+}
+
+.organs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 24px;
+}
+
+.organ-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  transition: var(--transition);
+  padding: 16px;
+  border-radius: 12px;
+}
+
+.organ-card:hover {
+  background-color: var(--background-secondary);
+  transform: translateY(-4px);
+}
+
+.organ-icon-circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: var(--primary-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  box-shadow: var(--card-shadow);
+  transition: var(--transition);
+}
+
+.organ-card:hover .organ-icon-circle {
+  background-color: var(--primary-color);
+}
+
+.organ-card:hover .organ-icon-circle svg {
+  color: white !important;
+}
+
+.organ-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.organ-tests {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 576px) {
+  .organs-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

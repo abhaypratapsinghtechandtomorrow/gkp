@@ -1,0 +1,2065 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gorakhpur Diagnostic Centre - Advanced Diagnostics at Your Doorstep</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/css/tabler-icons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <style>
+    :root {
+      --primary-color: #0F6E56;
+      --primary-dark: #085041;
+      --primary-light: #9FE1CB;
+      --secondary-blue: #185FA5;
+      --secondary-amber: #BA7517;
+      --secondary-purple: #993556;
+      --secondary-green: #3B6D11;
+      --secondary-navy: #534AB7;
+      --bg-primary: #ffffff;
+      --bg-secondary: #f8fafb;
+      --bg-tertiary: #f3f5f7;
+      --text-primary: #1a1d1f;
+      --text-secondary: #6c7278;
+      --border-color: #e8eaed;
+      --success: #0F6E56;
+      --warning: #BA7517;
+      --danger: #A32D2D;
+      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      --spacing-xs: 0.25rem;
+      --spacing-sm: 0.5rem;
+      --spacing-md: 1rem;
+      --spacing-lg: 1.5rem;
+      --spacing-xl: 2rem;
+      --spacing-2xl: 3rem;
+      --radius-sm: 0.375rem;
+      --radius-md: 0.5rem;
+      --radius-lg: 0.75rem;
+      --radius-xl: 1rem;
+      --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+      --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+      --shadow-lg: 0 10px 30px rgba(0,0,0,0.12);
+      --transition: all 0.3s ease;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background: var(--bg-tertiary);
+      color: var(--text-primary);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Typography */
+    h1, h2, h3, h4, h5, h6 {
+      font-weight: 600;
+      line-height: 1.2;
+    }
+
+    h1 { font-size: clamp(1.75rem, 5vw, 3rem); }
+    h2 { font-size: clamp(1.5rem, 4vw, 2.25rem); }
+    h3 { font-size: clamp(1.25rem, 3vw, 1.75rem); }
+    p { color: var(--text-secondary); }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: var(--transition);
+    }
+
+    /* Icons */
+    i {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .ti {
+      font-family: "tabler-icons" !important;
+      font-style: normal;
+      font-weight: normal;
+      font-variant: normal;
+      text-transform: none;
+      line-height: 1;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      display: inline-block;
+      color: var(--text-primary);
+      vertical-align: -0.125em;
+    }
+
+    .bi {
+      font-family: bootstrap-icons !important;
+      font-size: inherit;
+      vertical-align: baseline;
+      display: inline-block;
+    }
+
+    /* Icon sizes */
+    .ti-xs { font-size: 0.75rem; }
+    .ti-sm { font-size: 0.875rem; }
+    .ti-md { font-size: 1rem; }
+    .ti-lg { font-size: 1.5rem; }
+    .ti-xl { font-size: 2rem; }
+
+    /* Buttons */
+    .btn-primary,
+    .btn-outline,
+    .btn-secondary {
+      background: var(--primary-color);
+      color: #fff;
+      border: none;
+      padding: var(--spacing-sm) var(--spacing-lg);
+      border-radius: var(--radius-md);
+      font-size: 0.9375rem;
+      font-weight: 500;
+      font-family: inherit;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: var(--spacing-sm);
+      transition: var(--transition);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .btn-primary i,
+    .btn-outline i,
+    .btn-secondary i {
+      width: 1em;
+      height: 1em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px);
+    }
+
+    .btn-primary:active {
+      transform: translateY(0);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--primary-color);
+      border: 1.5px solid var(--primary-color);
+      padding: calc(var(--spacing-sm) - 1px) var(--spacing-lg);
+      border-radius: var(--radius-md);
+      font-size: 0.9375rem;
+      font-weight: 500;
+      font-family: inherit;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: var(--spacing-sm);
+      transition: var(--transition);
+    }
+
+    .btn-outline:hover {
+      background: var(--primary-color);
+      color: #fff;
+      box-shadow: var(--shadow-md);
+    }
+
+    .btn-secondary {
+      background: var(--bg-secondary);
+      color: var(--text-primary);
+      border: 1px solid var(--border-color);
+      padding: var(--spacing-sm) var(--spacing-lg);
+      border-radius: var(--radius-md);
+      font-size: 0.9375rem;
+      font-family: inherit;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: var(--spacing-sm);
+      transition: var(--transition);
+    }
+
+    .btn-secondary:hover {
+      background: var(--bg-primary);
+      border-color: var(--primary-color);
+    }
+
+    /* Badges & Tags */
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--spacing-xs);
+      background: #E1F5EE;
+      color: var(--primary-dark);
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: var(--spacing-xs) var(--spacing-md);
+      border-radius: 999px;
+      margin-bottom: var(--spacing-md);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: var(--spacing-xs) var(--spacing-md);
+      border-radius: 999px;
+    }
+
+    .badge-green { background: #E1F5EE; color: var(--primary-color); }
+    .badge-red { background: #FCEBEB; color: #A32D2D; }
+    .badge-amber { background: #FAEEDA; color: var(--secondary-amber); }
+    .badge-blue { background: #E6F1FB; color: var(--secondary-blue); }
+
+    /* Cards */
+    .card {
+      background: var(--bg-primary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: var(--spacing-lg);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card:hover {
+      border-color: var(--primary-color);
+      box-shadow: var(--shadow-md);
+      transform: translateY(-4px);
+    }
+
+    .card-icon {
+      width: 3rem;
+      height: 3rem;
+      border-radius: var(--radius-lg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: var(--spacing-md);
+      flex-shrink: 0;
+      font-size: 1.5rem;
+    }
+
+    .card-icon i {
+      width: 1.5rem;
+      height: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Dividers */
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border-color);
+      margin: var(--spacing-md) 0;
+    }
+
+    /* Container */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 var(--spacing-md);
+    }
+
+    /* Navigation */
+    .navbar {
+      background: var(--bg-primary);
+      border-bottom: 1px solid var(--border-color);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .navbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 4rem;
+    }
+
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-md);
+      flex-shrink: 0;
+      font-weight: 600;
+      color: var(--primary-color);
+    }
+
+    .navbar-brand-icon {
+      width: 2.25rem;
+      height: 2.25rem;
+      background: var(--primary-color);
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 1.25rem;
+    }
+
+    .navbar-brand-icon i {
+      width: 1.25rem;
+      height: 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .navbar-brand-text {
+      display: flex;
+      flex-direction: column;
+      gap: 0.125rem;
+    }
+
+    .navbar-brand-text > div:first-child {
+      font-size: 0.9375rem;
+      line-height: 1.2;
+    }
+
+    .navbar-brand-text > div:last-child {
+      font-size: 0.625rem;
+      color: var(--text-secondary);
+      letter-spacing: 0.04em;
+      font-weight: 500;
+    }
+
+    .navbar-nav {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-sm);
+    }
+
+    .navbar-nav a {
+      padding: var(--spacing-sm) var(--spacing-md);
+      font-size: 0.8125rem;
+      color: var(--text-secondary);
+      border-radius: var(--radius-md);
+      transition: var(--transition);
+      white-space: nowrap;
+    }
+
+    .navbar-nav a:hover,
+    .navbar-nav a.active {
+      background: var(--bg-secondary);
+      color: var(--primary-color);
+    }
+
+    .navbar-right {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-md);
+    }
+
+    .navbar-divider {
+      width: 1px;
+      height: 1.5rem;
+      background: var(--border-color);
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: var(--primary-color);
+      width: 2rem;
+      height: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .menu-toggle i {
+      width: 1.5rem;
+      height: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-color) 60%, #1D9E75 100%);
+      padding: clamp(2rem, 8vw, 4rem) var(--spacing-md) 0;
+      overflow: hidden;
+      color: #fff;
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--spacing-xl);
+      align-items: end;
+    }
+
+    .hero-content h1 {
+      color: #fff;
+      line-height: 1.2;
+      margin-bottom: var(--spacing-lg);
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--spacing-sm);
+      background: rgba(255,255,255,0.15);
+      border-radius: 999px;
+      padding: var(--spacing-sm) var(--spacing-md);
+      margin-bottom: var(--spacing-lg);
+      width: fit-content;
+      font-size: 0.8125rem;
+      color: var(--primary-light);
+    }
+
+    .hero-description {
+      font-size: 1rem;
+      color: var(--primary-light);
+      margin-bottom: var(--spacing-lg);
+      line-height: 1.8;
+      max-width: 440px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: var(--spacing-md);
+      flex-wrap: wrap;
+      margin-bottom: var(--spacing-2xl);
+    }
+
+    .hero-buttons .btn-primary {
+      background: #fff;
+      color: var(--primary-dark);
+      font-weight: 600;
+    }
+
+    .hero-buttons .btn-primary:hover {
+      background: var(--primary-light);
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--spacing-lg);
+    }
+
+    .hero-stat {
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing-sm);
+    }
+
+    .hero-stat-value {
+      font-size: clamp(1.5rem, 3vw, 1.75rem);
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .hero-stat-label {
+      font-size: 0.75rem;
+      color: var(--primary-light);
+      text-transform: uppercase;
+    }
+
+    .hero-stat-divider {
+      width: 1px;
+      height: auto;
+      background: rgba(255,255,255,0.2);
+      margin: 0 -var(--spacing-md);
+    }
+
+    /* Booking Card */
+    .booking-card {
+      background: var(--bg-primary);
+      border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+      padding: var(--spacing-lg);
+      box-shadow: 0 -4px 40px rgba(0,0,0,0.12);
+      color: var(--text-primary); /* override hero's white color */
+    }
+
+    .booking-card-header {
+      margin-bottom: var(--spacing-lg);
+    }
+
+    .booking-card-header h3 {
+      font-size: 1rem;
+      margin-bottom: var(--spacing-xs);
+    }
+
+    .booking-card-header p {
+      font-size: 0.8125rem;
+      color: var(--text-secondary);
+    }
+
+    .search-input {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-md);
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: var(--spacing-md);
+      margin-bottom: var(--spacing-md);
+      font-size: 0.8125rem;
+      color: var(--text-secondary);
+    }
+
+    .search-input input {
+      border: none;
+      background: none;
+      outline: none;
+      flex: 1;
+      font-family: inherit;
+      font-size: inherit;
+      color: var(--text-primary);
+    }
+
+    .search-input input::placeholder {
+      color: var(--text-secondary);
+    }
+
+    .popular-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--spacing-sm);
+      margin-bottom: var(--spacing-lg);
+    }
+
+    .popular-tags span {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 999px;
+      padding: var(--spacing-sm) var(--spacing-md);
+      font-size: 0.8125rem;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .popular-tags span:hover {
+      background: var(--primary-color);
+      color: #fff;
+      border-color: var(--primary-color);
+    }
+
+    .collection-options {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--spacing-md);
+      margin-bottom: var(--spacing-lg);
+    }
+
+    .collection-option {
+      border: 2px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: var(--spacing-md);
+      cursor: pointer;
+      text-align: center;
+      transition: var(--transition);
+    }
+
+    .collection-option:hover {
+      border-color: var(--primary-color);
+      background: #E1F5EE;
+    }
+
+    .collection-option.selected {
+      border-color: var(--primary-color);
+      background: #E1F5EE;
+    }
+
+    .collection-option-icon {
+      font-size: 1.5rem;
+      margin-bottom: var(--spacing-sm);
+      display: block;
+      color: var(--primary-color);
+      width: 1.5rem;
+      height: 1.5rem;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .collection-option:not(.selected) .collection-option-icon {
+      color: var(--text-secondary);
+    }
+
+    /* Trust Bar */
+    .trust-bar {
+      background: var(--bg-primary);
+      border-bottom: 1px solid var(--border-color);
+      padding: var(--spacing-md);
+    }
+
+    .trust-bar-inner {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: var(--spacing-md);
+      align-items: center;
+      justify-items: center;
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-sm);
+      font-size: 0.8125rem;
+      color: var(--text-secondary);
+    }
+
+    .trust-item i {
+      color: var(--primary-color);
+      font-size: 1.25rem;
+      flex-shrink: 0;
+      width: 1.25rem;
+      height: 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Main Content */
+    .main-content {
+      padding: var(--spacing-2xl) var(--spacing-md);
+    }
+
+    /* Section Header */
+    .section-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: var(--spacing-xl);
+      flex-wrap: wrap;
+      gap: var(--spacing-md);
+    }
+
+    .section-header-content h2 {
+      margin-bottom: var(--spacing-md);
+    }
+
+    .section-header-content p {
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+    }
+
+    /* Grid Layouts */
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: var(--spacing-lg);
+      margin-bottom: var(--spacing-2xl);
+    }
+
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: var(--spacing-md);
+      margin-bottom: var(--spacing-2xl);
+    }
+
+    /* Package Cards */
+    .package-card {
+      border-top: 4px solid;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .package-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(0,0,0,0.02), transparent);
+      pointer-events: none;
+    }
+
+    .package-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: var(--spacing-md);
+      position: relative;
+      z-index: 1;
+    }
+
+    .package-card-title {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .package-card-description {
+      font-size: 0.8125rem;
+      color: var(--text-secondary);
+      margin-bottom: var(--spacing-md);
+      line-height: 1.6;
+    }
+
+    .package-card-tests {
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+      margin-bottom: var(--spacing-md);
+    }
+
+    .package-card-pricing {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: var(--spacing-md);
+    }
+
+    .package-price {
+      display: flex;
+      align-items: baseline;
+      gap: var(--spacing-sm);
+    }
+
+    .package-price-current {
+      font-size: 1.25rem;
+      font-weight: 700;
+    }
+
+    .package-price-original {
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      text-decoration: line-through;
+    }
+
+    /* Category Cards */
+    .category-card {
+      text-align: center;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--spacing-md);
+      position: relative;
+    }
+
+    .category-card-icon {
+      width: 3.5rem;
+      height: 3.5rem;
+      border-radius: var(--radius-lg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      transition: var(--transition);
+    }
+
+    .category-card-icon i {
+      width: 1.5rem;
+      height: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .category-card:hover .category-card-icon {
+      transform: scale(1.1);
+    }
+
+    .category-card-title {
+      font-size: 0.8125rem;
+      font-weight: 600;
+    }
+
+    .category-card-description {
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+    }
+
+    /* Two Column Layout */
+    .two-column {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: var(--spacing-2xl);
+      margin-bottom: var(--spacing-2xl);
+    }
+
+    /* Process Steps */
+    .process-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .process-step {
+      display: flex;
+      gap: var(--spacing-lg);
+      align-items: flex-start;
+      padding-bottom: var(--spacing-lg);
+    }
+
+    .process-step:not(:last-child) {
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .process-step-number {
+      width: 2.25rem;
+      height: 2.25rem;
+      background: var(--primary-color);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 0.875rem;
+      font-weight: 700;
+      flex-shrink: 0;
+      line-height: 1;
+    }
+
+    .process-step-content h3 {
+      font-size: 0.9375rem;
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .process-step-content p {
+      font-size: 0.8125rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+    }
+
+    /* Cart Card */
+    .cart-card {
+      align-self: start;
+      position: sticky;
+      top: 5rem;
+    }
+
+    .cart-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: var(--spacing-lg);
+    }
+
+    .cart-items {
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing-md);
+      margin-bottom: var(--spacing-lg);
+    }
+
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: var(--spacing-md);
+      background: var(--bg-secondary);
+      border-radius: var(--radius-md);
+      transition: var(--transition);
+    }
+
+    .cart-item:hover {
+      background: var(--border-color);
+    }
+
+    .cart-item-name {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      margin-bottom: var(--spacing-xs);
+    }
+
+    .cart-item-description {
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+    }
+
+    .cart-item-price {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--primary-color);
+      margin-bottom: var(--spacing-xs);
+    }
+
+    .cart-totals {
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing-md);
+      margin-bottom: var(--spacing-lg);
+    }
+
+    .cart-total-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.8125rem;
+      color: var(--text-secondary);
+    }
+
+    .cart-total-final {
+      font-size: 0.9375rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      padding-top: var(--spacing-md);
+      border-top: 1px solid var(--border-color);
+    }
+
+    /* Testimonials */
+    .testimonial-card {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .testimonial-rating {
+      display: flex;
+      gap: 0.125rem;
+      margin-bottom: var(--spacing-md);
+      color: #EF9F27;
+    }
+
+    .testimonial-rating i {
+      width: 1rem;
+      height: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+    }
+
+    /* General icon improvements */
+    button i,
+    .navbar-nav i,
+    .navbar-brand-icon i,
+    .card-icon i,
+    .category-card-icon i,
+    .trust-item i,
+    .footer-logo-icon i {
+      flex-shrink: 0;
+      line-height: 1;
+    }
+
+    /* Close/delete icons */
+    .cart-item i,
+    .remove-item i {
+      cursor: pointer;
+      width: 1rem;
+      height: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .testimonial-text {
+      font-size: 0.8125rem;
+      color: var(--text-secondary);
+      margin-bottom: var(--spacing-md);
+      line-height: 1.8;
+      flex: 1;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-md);
+    }
+
+    .testimonial-avatar {
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 700;
+      flex-shrink: 0;
+      min-width: 2.5rem;
+    }
+
+    .testimonial-author-name {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      line-height: 1.2;
+    }
+
+    .testimonial-author-location {
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+    }
+
+    /* CTA Banner */
+    .cta-banner {
+      background: var(--primary-dark);
+      border-radius: var(--radius-lg);
+      padding: var(--spacing-2xl);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: var(--spacing-lg);
+      margin-bottom: var(--spacing-2xl);
+      color: #fff;
+    }
+
+    .cta-banner-content h3 {
+      color: #fff;
+      margin-bottom: var(--spacing-sm);
+      font-size: 1.125rem;
+    }
+
+    .cta-banner-content p {
+      color: var(--primary-light);
+      font-size: 0.8125rem;
+    }
+
+    .cta-banner-input {
+      display: flex;
+      gap: var(--spacing-md);
+      align-items: center;
+    }
+
+    .phone-input {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-md);
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: var(--radius-md);
+      padding: var(--spacing-md) var(--spacing-lg);
+      font-size: 0.8125rem;
+      color: rgba(255,255,255,0.6);
+      min-width: 200px;
+    }
+
+    /* Footer */
+    .footer {
+      background: var(--bg-primary);
+      border-top: 1px solid var(--border-color);
+      padding: var(--spacing-2xl) var(--spacing-md) var(--spacing-lg);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: var(--spacing-2xl);
+      margin-bottom: var(--spacing-xl);
+    }
+
+    .footer-column-title {
+      font-size: 0.8125rem;
+      font-weight: 700;
+      margin-bottom: var(--spacing-md);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-primary);
+    }
+
+    .footer-column-content {
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing-md);
+      font-size: 0.8125rem;
+      color: var(--text-secondary);
+    }
+
+    .footer-column-content a {
+      color: var(--text-secondary);
+      transition: var(--transition);
+    }
+
+    .footer-column-content a:hover {
+      color: var(--primary-color);
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-md);
+      margin-bottom: var(--spacing-md);
+      font-weight: 600;
+      color: var(--primary-color);
+      font-size: 0.875rem;
+    }
+
+    .footer-logo-icon {
+      width: 2rem;
+      height: 2rem;
+      background: var(--primary-color);
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 1rem;
+    }
+
+    .footer-logo-icon i {
+      width: 1rem;
+      height: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .footer-divider {
+      border-top: 1px solid var(--border-color);
+      padding-top: var(--spacing-md);
+      margin-bottom: var(--spacing-md);
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: var(--spacing-md);
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+    }
+
+    .footer-badges {
+      display: flex;
+      gap: var(--spacing-md);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .navbar-nav {
+        display: none;
+      }
+
+      .navbar-right {
+        gap: var(--spacing-md);
+      }
+
+      .menu-toggle {
+        display: flex !important;
+      }
+
+      .navbar-divider {
+        display: none;
+      }
+
+      .hero-inner {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-xl);
+      }
+
+      .booking-card {
+        margin: 0 calc(var(--spacing-md) * -1) calc(var(--spacing-md) * -1);
+        border-radius: 0;
+      }
+
+      .hero-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-md);
+      }
+
+      .hero-stat-divider {
+        display: none;
+      }
+
+      .trust-bar-inner {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+      }
+
+      .two-column {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+      }
+
+      .cart-card {
+        position: static;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+      }
+
+      .cta-banner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .cta-banner-input {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .phone-input {
+        width: 100%;
+        min-width: unset;
+      }
+
+      .grid-3 {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      }
+
+      .grid-4 {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      }
+
+      .collection-options {
+        grid-template-columns: 1fr;
+      }
+
+      .process-steps {
+        gap: var(--spacing-lg);
+      }
+
+      .process-step {
+        padding-bottom: var(--spacing-lg);
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .section-header {
+        flex-direction: column;
+      }
+
+      h1, h2, h3 {
+        word-break: break-word;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 0 var(--spacing-sm);
+      }
+
+      .hero {
+        padding: var(--spacing-xl) var(--spacing-md) 0;
+      }
+
+      .navbar-inner {
+        height: auto;
+        padding: var(--spacing-md) 0;
+      }
+
+      .navbar-brand-text > div:first-child {
+        font-size: 0.8125rem;
+      }
+
+      .grid-3, .grid-4 {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+      }
+
+      .btn-primary, .btn-outline, .btn-secondary {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .main-content {
+        padding: var(--spacing-lg) var(--spacing-md);
+      }
+
+      .cta-banner {
+        padding: var(--spacing-lg);
+      }
+
+      .process-steps {
+        gap: var(--spacing-md);
+      }
+
+      .process-step {
+        gap: var(--spacing-md);
+      }
+
+      .footer-grid {
+        gap: var(--spacing-md);
+      }
+
+      .two-column {
+        gap: var(--spacing-md);
+      }
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-in-up {
+      animation: fadeInUp 0.6s ease-out;
+    }
+
+    /* Print Styles */
+    @media print {
+      .navbar, .footer, .cart-card, .btn-primary, .btn-outline {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container navbar-inner">
+      <div class="navbar-brand">
+        <div class="navbar-brand-icon">
+          <i class="ti ti-stethoscope"></i>
+        </div>
+        <div class="navbar-brand-text">
+          <div>Gorakhpur Diagnostic</div>
+          <div>CENTRE PVT. LTD.</div>
+        </div>
+      </div>
+      <div class="navbar-right">
+        <nav class="navbar-nav">
+          <a href="#tests" class="active">Tests</a>
+          <a href="#packages">Packages</a>
+          <a href="#home-visit">Home Visit</a>
+          <a href="#reports">Reports</a>
+        </nav>
+        <div class="navbar-divider"></div>
+        <button class="btn-primary" style="font-size: 0.8125rem;">
+          <i class="ti ti-phone"></i>
+          <span>Book Now</span>
+        </button>
+        <button class="menu-toggle" aria-label="Toggle menu">
+          <i class="ti ti-menu-2"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <i class="ti ti-map-pin"></i>
+          <span>Gorakhpur's most trusted diagnostic lab</span>
+        </div>
+        <h1>Advanced diagnostics,<br><span style="color: var(--primary-light);">at your doorstep</span></h1>
+        <p class="hero-description">NABL-accredited lab with 200+ tests. Book a home sample collection in 2 minutes. Reports in 4–24 hours.</p>
+        <div class="hero-buttons">
+          <button class="btn-primary">
+            <i class="ti ti-calendar-plus"></i>
+            <span>Book Home Visit</span>
+          </button>
+          <button style="background: rgba(255,255,255,0.12); color: #fff; border: 1px solid rgba(255,255,255,0.3); padding: var(--spacing-md) var(--spacing-lg); border-radius: var(--radius-md); font-size: 0.9375rem; cursor: pointer; font-family: inherit; display: inline-flex; align-items: center; gap: var(--spacing-sm); transition: var(--transition);">
+            <i class="ti ti-file-description"></i>
+            <span>View Reports</span>
+          </button>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="hero-stat-value">1.2L+</div>
+            <div class="hero-stat-label">Tests done</div>
+          </div>
+          <div class="hero-stat-divider"></div>
+          <div class="hero-stat">
+            <div class="hero-stat-value">200+</div>
+            <div class="hero-stat-label">Test types</div>
+          </div>
+          <div class="hero-stat-divider"></div>
+          <div class="hero-stat">
+            <div class="hero-stat-value">4 hr</div>
+            <div class="hero-stat-label">Fastest report</div>
+          </div>
+          <div class="hero-stat-divider"></div>
+          <div class="hero-stat">
+            <div class="hero-stat-value">NABL</div>
+            <div class="hero-stat-label">Accredited</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Booking Card -->
+      <div class="booking-card">
+        <div class="booking-card-header">
+          <h3>Book a test</h3>
+          <p>Home sample collection available</p>
+        </div>
+        <div class="search-input">
+          <i class="ti ti-search"></i>
+          <input type="text" placeholder="Search tests or packages…">
+        </div>
+        <div style="font-size: 0.75rem; color: var(--text-secondary); margin-bottom: var(--spacing-md);">Popular searches</div>
+        <div class="popular-tags">
+          <span>CBC</span>
+          <span>Thyroid (TSH)</span>
+          <span>HbA1c</span>
+          <span>Vitamin D</span>
+          <span>Liver Panel</span>
+        </div>
+        <hr class="divider">
+        <div style="font-size: 0.8125rem; font-weight: 600; margin-bottom: var(--spacing-md);">Choose collection type</div>
+        <div class="collection-options">
+          <div class="collection-option selected">
+            <i class="ti ti-home collection-option-icon"></i>
+            <div style="font-size: 0.8125rem; font-weight: 600; margin-top: var(--spacing-sm);">Home Visit</div>
+            <div style="font-size: 0.75rem; color: var(--text-secondary);">₹50 collection fee</div>
+          </div>
+          <div class="collection-option">
+            <i class="ti ti-building-hospital collection-option-icon"></i>
+            <div style="font-size: 0.8125rem; font-weight: 600; margin-top: var(--spacing-sm);">Visit Lab</div>
+            <div style="font-size: 0.75rem; color: var(--text-secondary);">Free</div>
+          </div>
+        </div>
+        <button class="btn-primary" style="width: 100%; justify-content: center;">
+          Continue booking
+          <i class="ti ti-arrow-right"></i>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Bar -->
+  <section class="trust-bar">
+    <div class="container trust-bar-inner">
+      <div class="trust-item">
+        <i class="ti ti-certificate"></i>
+        <span>NABL Accredited Lab</span>
+      </div>
+      <div class="trust-item">
+        <i class="ti ti-clock"></i>
+        <span>Reports in 4–24 hrs</span>
+      </div>
+      <div class="trust-item">
+        <i class="ti ti-home"></i>
+        <span>Free home collection above ₹499</span>
+      </div>
+      <div class="trust-item">
+        <i class="ti ti-shield-check"></i>
+        <span>100% secure report access</span>
+      </div>
+      <div class="trust-item">
+        <i class="ti ti-star"></i>
+        <span>4.8★ on Google (2400+ reviews)</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <div class="container">
+
+      <!-- Health Packages Section -->
+      <section>
+        <div class="section-header">
+          <div class="section-header-content">
+            <div class="tag">
+              <i class="ti ti-rocket"></i>
+              <span>Most booked</span>
+            </div>
+            <h2>Health packages</h2>
+            <p>Curated for Gorakhpur's most common health concerns</p>
+          </div>
+          <button class="btn-outline">
+            View all
+            <i class="ti ti-arrow-right"></i>
+          </button>
+        </div>
+
+        <div class="grid-3">
+          <!-- Package 1 -->
+          <div class="card package-card" style="border-top-color: var(--primary-color);">
+            <div class="package-card-header">
+              <div class="card-icon" style="background: #E1F5EE;">
+                <i class="ti ti-heart-rate-monitor" style="color: var(--primary-color); font-size: 1.5rem;"></i>
+              </div>
+              <span class="badge badge-green">Save 40%</span>
+            </div>
+            <div class="package-card-title">Full Body Basic</div>
+            <div class="package-card-description">CBC · Thyroid · Blood Sugar · Lipid · Liver · Kidney</div>
+            <div class="package-card-tests">68 tests included</div>
+            <hr class="divider" style="margin-top: auto;">
+            <div class="package-card-pricing">
+              <div class="package-price">
+                <span class="package-price-current" style="color: var(--primary-color);">₹699</span>
+                <span class="package-price-original">₹1,199</span>
+              </div>
+              <button class="btn-primary" style="padding: var(--spacing-sm) var(--spacing-md); font-size: 0.8125rem;">Add</button>
+            </div>
+          </div>
+
+          <!-- Package 2 -->
+          <div class="card package-card" style="border-top-color: var(--secondary-blue);">
+            <div class="package-card-header">
+              <div class="card-icon" style="background: #E6F1FB;">
+                <i class="ti ti-activity" style="color: var(--secondary-blue); font-size: 1.5rem;"></i>
+              </div>
+              <span class="badge badge-blue">Save 55%</span>
+            </div>
+            <div class="package-card-title">Full Body Advanced</div>
+            <div class="package-card-description">Everything in Basic + Vitamin B12 · D3 · HbA1c · Ferritin</div>
+            <div class="package-card-tests">98 tests included</div>
+            <hr class="divider" style="margin-top: auto;">
+            <div class="package-card-pricing">
+              <div class="package-price">
+                <span class="package-price-current" style="color: var(--secondary-blue);">₹1,199</span>
+                <span class="package-price-original">₹2,699</span>
+              </div>
+              <button class="btn-primary" style="background: var(--secondary-blue); padding: var(--spacing-sm) var(--spacing-md); font-size: 0.8125rem;">Add</button>
+            </div>
+          </div>
+
+          <!-- Package 3 -->
+          <div class="card package-card" style="border-top-color: var(--secondary-amber);">
+            <div class="package-card-header">
+              <div class="card-icon" style="background: #FAEEDA;">
+                <i class="ti ti-droplet" style="color: var(--secondary-amber); font-size: 1.5rem;"></i>
+              </div>
+              <span class="badge badge-amber">Save 45%</span>
+            </div>
+            <div class="package-card-title">Diabetes Care</div>
+            <div class="package-card-description">FBS · PPBS · HbA1c · Insulin · Urine Micro</div>
+            <div class="package-card-tests">12 tests included</div>
+            <hr class="divider" style="margin-top: auto;">
+            <div class="package-card-pricing">
+              <div class="package-price">
+                <span class="package-price-current" style="color: var(--secondary-amber);">₹549</span>
+                <span class="package-price-original">₹999</span>
+              </div>
+              <button class="btn-primary" style="background: var(--secondary-amber); padding: var(--spacing-sm) var(--spacing-md); font-size: 0.8125rem;">Add</button>
+            </div>
+          </div>
+
+          <!-- Package 4 -->
+          <div class="card package-card" style="border-top-color: var(--secondary-purple);">
+            <div class="package-card-header">
+              <div class="card-icon" style="background: #FBEAF0;">
+                <i class="ti ti-woman" style="color: var(--secondary-purple); font-size: 1.5rem;"></i>
+              </div>
+              <span class="badge badge-red">Save 50%</span>
+            </div>
+            <div class="package-card-title">Women's Wellness</div>
+            <div class="package-card-description">CBC · TSH · FSH · LH · Prolactin · Vitamin D · B12</div>
+            <div class="package-card-tests">32 tests included</div>
+            <hr class="divider" style="margin-top: auto;">
+            <div class="package-card-pricing">
+              <div class="package-price">
+                <span class="package-price-current" style="color: var(--secondary-purple);">₹799</span>
+                <span class="package-price-original">₹1,599</span>
+              </div>
+              <button class="btn-primary" style="background: var(--secondary-purple); padding: var(--spacing-sm) var(--spacing-md); font-size: 0.8125rem;">Add</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Test Categories -->
+      <section>
+        <div class="tag">
+          <i class="ti ti-category"></i>
+          <span>Browse by category</span>
+        </div>
+        <h2 style="margin-bottom: var(--spacing-lg);">Tests by type</h2>
+        <div class="grid-4">
+          <div class="card category-card">
+            <div class="card-icon category-card-icon" style="background: #E1F5EE;">
+              <i class="ti ti-droplet-half-2" style="color: var(--primary-color);"></i>
+            </div>
+            <div class="category-card-title">Blood Tests</div>
+            <div class="category-card-description">84 tests</div>
+          </div>
+          <div class="card category-card">
+            <div class="card-icon category-card-icon" style="background: #E6F1FB;">
+              <i class="ti ti-scan" style="color: var(--secondary-blue);"></i>
+            </div>
+            <div class="category-card-title">Radiology</div>
+            <div class="category-card-description">X-ray · USG</div>
+          </div>
+          <div class="card category-card">
+            <div class="card-icon category-card-icon" style="background: #FAEEDA;">
+              <i class="ti ti-heart" style="color: var(--secondary-amber);"></i>
+            </div>
+            <div class="category-card-title">Cardiac</div>
+            <div class="category-card-description">ECG · ECHO</div>
+          </div>
+          <div class="card category-card">
+            <div class="card-icon category-card-icon" style="background: #FBEAF0;">
+              <i class="ti ti-flask" style="color: var(--secondary-purple);"></i>
+            </div>
+            <div class="category-card-title">Hormones</div>
+            <div class="category-card-description">22 tests</div>
+          </div>
+          <div class="card category-card">
+            <div class="card-icon category-card-icon" style="background: #EEEDFE;">
+              <i class="ti ti-brain" style="color: var(--secondary-navy);"></i>
+            </div>
+            <div class="category-card-title">Neurology</div>
+            <div class="category-card-description">8 tests</div>
+          </div>
+          <div class="card category-card">
+            <div class="card-icon category-card-icon" style="background: #EAF3DE;">
+              <i class="ti ti-microscope" style="color: var(--secondary-green);"></i>
+            </div>
+            <div class="category-card-title">Microbiology</div>
+            <div class="category-card-description">Culture tests</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- How It Works + Cart -->
+      <section class="two-column">
+        <div>
+          <div class="tag">
+            <i class="ti ti-checklist"></i>
+            <span>Simple process</span>
+          </div>
+          <h2 style="margin-bottom: var(--spacing-xl);">How it works</h2>
+          <div class="process-steps">
+            <div class="process-step">
+              <div class="process-step-number">1</div>
+              <div class="process-step-content">
+                <h3>Book your test</h3>
+                <p>Search and add tests or packages. Choose home visit or walk-in. Pay online or at centre.</p>
+              </div>
+            </div>
+            <div class="process-step">
+              <div class="process-step-number">2</div>
+              <div class="process-step-content">
+                <h3>Sample collection</h3>
+                <p>Our trained phlebotomist visits your home at your chosen time slot — 6 AM to 10 AM preferred.</p>
+              </div>
+            </div>
+            <div class="process-step">
+              <div class="process-step-number">3</div>
+              <div class="process-step-content">
+                <h3>Get reports online</h3>
+                <p>PDF reports sent to WhatsApp & email. Download anytime from your patient portal.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cart -->
+        <div class="card cart-card">
+          <div class="cart-header">
+            <div style="font-size: 0.9375rem; font-weight: 600; display: flex; align-items: center; gap: var(--spacing-md);">
+              <i class="ti ti-shopping-cart" style="color: var(--primary-color);"></i>
+              <span>Your cart</span>
+            </div>
+            <span class="badge badge-green">2 items</span>
+          </div>
+          <div class="cart-items">
+            <div class="cart-item">
+              <div>
+                <div class="cart-item-name">Full Body Basic</div>
+                <div class="cart-item-description">68 tests</div>
+              </div>
+              <div style="text-align: right;">
+                <div class="cart-item-price">₹699</div>
+                <i class="ti ti-x" style="font-size: 0.8125rem; color: var(--text-secondary); cursor: pointer;"></i>
+              </div>
+            </div>
+            <div class="cart-item">
+              <div>
+                <div class="cart-item-name">Vitamin D</div>
+                <div class="cart-item-description">1 test</div>
+              </div>
+              <div style="text-align: right;">
+                <div class="cart-item-price">₹349</div>
+                <i class="ti ti-x" style="font-size: 0.8125rem; color: var(--text-secondary); cursor: pointer;"></i>
+              </div>
+            </div>
+          </div>
+          <hr class="divider">
+          <div class="cart-totals">
+            <div class="cart-total-row">
+              <span>Subtotal</span>
+              <span>₹1,048</span>
+            </div>
+            <div class="cart-total-row">
+              <span>Home visit fee</span>
+              <span style="color: var(--primary-color); font-weight: 600;">Free</span>
+            </div>
+            <div class="cart-total-row cart-total-final">
+              <span>Total</span>
+              <span>₹1,048</span>
+            </div>
+          </div>
+          <button class="btn-primary" style="width: 100%; justify-content: center; margin-top: var(--spacing-lg);">
+            Proceed to payment
+          </button>
+        </div>
+      </section>
+
+      <!-- Testimonials -->
+      <section style="margin-bottom: var(--spacing-2xl);">
+        <div class="tag">
+          <i class="ti ti-star"></i>
+          <span>Patient reviews</span>
+        </div>
+        <h2 style="margin-bottom: var(--spacing-lg);">What Gorakhpur says</h2>
+        <div class="grid-3">
+          <div class="card testimonial-card">
+            <div class="testimonial-rating">
+              <i class="ti ti-star-filled"></i>
+              <i class="ti ti-star-filled"></i>
+              <i class="ti ti-star-filled"></i>
+              <i class="ti ti-star-filled"></i>
+              <i class="ti ti-star-filled"></i>
+            </div>
+            <p class="testimonial-text">"Home collection bahut convenient tha. Subah 7 baje aaye, report WhatsApp pe same din. Bahut achi service."</p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar" style="background: #E1F5EE; color: var(--primary-color);">RP</div>
+              <div>
+                <div class="testimonial-author-name">Rajesh Pandey</div>
+                <div class="testimonial-author-location">Gorakhpur</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card testimonial-card">
+            <div class="testimonial-rating">
+              <i class="ti ti-star-filled"></i>
+              <i class="ti ti-star-filled"></i>
+              <i class="ti ti-star-filled"></i>
+              <i class="ti ti-star-filled"></i>
+              <i class="ti ti-star-filled"></i>
+            </div>
+            <p class="testimonial-text">"NABL certified lab hai, doctor ne khud recommend kiya. Prices reasonable hain aur reports clear aate hain."</p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar" style="background: #FBEAF0; color: var(--secondary-purple);">PS</div>
+              <div>
+                <div class="testimonial-author-name">Priya Singh</div>
+                <div class="testimonial-author-location">Civil Lines</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card testimonial-card">
+            <div class="testimonial-rating">
+              <i class="ti ti-star-filled"></i>
+              <i class="ti ti-star-filled"></i>
+              <i class="ti ti-star-filled"></i>
+              <i class="ti ti-star-filled"></i>
+              <i class="ti ti-star"></i>
+            </div>
+            <p class="testimonial-text">"Online booking, payment, report sab ek jagah. Pehle dusri labs mein chakkar lagane padte the."</p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar" style="background: #E6F1FB; color: var(--secondary-blue);">AK</div>
+              <div>
+                <div class="testimonial-author-name">Anil Kumar</div>
+                <div class="testimonial-author-location">Rapti Nagar</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Banner -->
+      <section class="cta-banner">
+        <div class="cta-banner-content">
+          <h3>Access your reports anytime</h3>
+          <p>Enter your mobile number to view, download, or share your reports instantly.</p>
+        </div>
+        <div class="cta-banner-input">
+          <div class="phone-input">
+            <i class="ti ti-phone"></i>
+            <span>+91 9876543210</span>
+          </div>
+          <button class="btn-primary" style="background: #fff; color: var(--primary-dark); font-weight: 600;">View Reports</button>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo">
+            <div class="footer-logo-icon">
+              <i class="ti ti-stethoscope"></i>
+            </div>
+            <span>Gorakhpur Diagnostic Centre</span>
+          </div>
+          <p style="font-size: 0.8125rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: var(--spacing-md);">NABL-accredited diagnostic lab serving Gorakhpur since 2008. 200+ tests, home collection, digital reports.</p>
+          <div style="font-size: 0.8125rem; color: var(--text-secondary); display: flex; align-items: center; gap: var(--spacing-sm); margin-bottom: var(--spacing-sm);">
+            <i class="ti ti-map-pin"></i>
+            <span>Medical Chowk, Gorakhpur, UP 273001</span>
+          </div>
+          <div style="font-size: 0.8125rem; color: var(--text-secondary); display: flex; align-items: center; gap: var(--spacing-sm);">
+            <i class="ti ti-phone"></i>
+            <span>0551-2200100 · WhatsApp: 9876543210</span>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-column-title">Tests</div>
+          <div class="footer-column-content">
+            <a href="#blood-tests">Blood Tests</a>
+            <a href="#urine-tests">Urine Tests</a>
+            <a href="#radiology">X-Ray & USG</a>
+            <a href="#ecg">ECG</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-column-title">Services</div>
+          <div class="footer-column-content">
+            <a href="#home-collection">Home Collection</a>
+            <a href="#corporate">Corporate Health</a>
+            <a href="#digital-reports">Digital Reports</a>
+            <a href="#consult">Doctor Consult</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-column-title">Help</div>
+          <div class="footer-column-content">
+            <a href="#view-reports">View Reports</a>
+            <a href="#book-test">Book a Test</a>
+            <a href="#contact">Contact Us</a>
+            <a href="#privacy">Privacy Policy</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-divider"></div>
+
+      <div class="footer-bottom">
+        <div>© 2024 Gorakhpur Diagnostic Centre Pvt. Ltd. All rights reserved.</div>
+        <div class="footer-badges">
+          <span class="badge badge-green">NABL</span>
+          <span class="badge badge-green">ISO 15189</span>
+          <span class="badge badge-blue">UPI Accepted</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Ensure icons are loaded and visible
+    function ensureIconsLoaded() {
+      // Check if Tabler Icons are loaded
+      const style = document.createElement('style');
+      style.textContent = `
+        /* SVG Icon rendering */
+        [class*="ti-"]::before {
+          content: '';
+        }
+        
+        .ti {
+          display: inline-flex;
+          width: 1em;
+          height: 1em;
+          vertical-align: -0.125em;
+        }
+      `;
+      document.head.appendChild(style);
+      
+      // Make sure all icons have proper display
+      document.querySelectorAll('i[class*="ti-"]').forEach(icon => {
+        icon.style.display = 'inline-flex';
+        icon.style.alignItems = 'center';
+        icon.style.justifyContent = 'center';
+      });
+    }
+    
+    // Run when DOM is ready
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', ensureIconsLoaded);
+    } else {
+      ensureIconsLoaded();
+    }
+
+    // Mobile menu toggle
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navBar = document.querySelector('.navbar-nav');
+    
+    if (menuToggle) {
+      menuToggle.addEventListener('click', function() {
+        navBar.style.display = navBar.style.display === 'flex' ? 'none' : 'flex';
+      });
+    }
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        if (href !== '#' && document.querySelector(href)) {
+          e.preventDefault();
+          document.querySelector(href).scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+
+    // Add fade-in animation on scroll
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('fade-in-up');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.card, .section-header').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Close mobile menu on navigation
+    document.querySelectorAll('.navbar-nav a').forEach(link => {
+      link.addEventListener('click', () => {
+        navBar.style.display = 'none';
+      });
+    });
+  </script>
+</body>
+</html>
+      <div style="display:flex;justify-content:space-between;font-size:13px;color:#0F6E56;margin-bottom:6px"><span>Home visit fee</span><span>Free</span></div>
+      <div style="display:flex;justify-content:space-between;font-size:15px;font-weight:500;margin-bottom:14px"><span>Total</span><span>₹1,048</span></div>
+      <button class="btn-primary" style="width:100%;padding:11px;font-size:13px">Proceed to payment</button>
+    </div>
+  </div>
+
+  <!-- TESTIMONIALS -->
+  <div style="margin-bottom:40px">
+    <span class="tag">Patient reviews</span>
+    <h2 style="font-size:22px;font-weight:500;margin-bottom:16px">What Gorakhpur says</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px">
+      <div class="card">
+        <div style="display:flex;gap:2px;margin-bottom:10px">
+          <i class="ti ti-star-filled" style="color:#EF9F27;font-size:14px" aria-hidden="true"></i>
+          <i class="ti ti-star-filled" style="color:#EF9F27;font-size:14px" aria-hidden="true"></i>
+          <i class="ti ti-star-filled" style="color:#EF9F27;font-size:14px" aria-hidden="true"></i>
+          <i class="ti ti-star-filled" style="color:#EF9F27;font-size:14px" aria-hidden="true"></i>
+          <i class="ti ti-star-filled" style="color:#EF9F27;font-size:14px" aria-hidden="true"></i>
+        </div>
+        <p style="font-size:13px;color:var(--color-text-secondary);margin-bottom:12px;line-height:1.6">"Home collection bahut convenient tha. Subah 7 baje aaye, report WhatsApp pe same din. Bahut achi service."</p>
+        <div style="display:flex;align-items:center;gap:8px">
+          <div style="width:30px;height:30px;background:#E1F5EE;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:500;color:#0F6E56">RP</div>
+          <div><div style="font-size:13px;font-weight:500">Rajesh Pandey</div><div style="font-size:11px;color:var(--color-text-secondary)">Gorakhpur</div></div>
+        </div>
+      </div>
+      <div class="card">
+        <div style="display:flex;gap:2px;margin-bottom:10px">
+          <i class="ti ti-star-filled" style="color:#EF9F27;font-size:14px" aria-hidden="true"></i>
+          <i class="ti ti-star-filled" style="color:#EF9F27;font-size:14px" aria-hidden="true"></i>
+          <i class="ti ti-star-filled" style="color:#EF9F27;font-size:14px" aria-hidden="true"></i>
+          <i class="ti ti-star-filled" style="color:#EF9F27;font-size:14px" aria-hidden="true"></i>
+          <i class="ti ti-star-filled" style="color:#EF9F27;font-size:14px" aria-hidden="true"></i>
+        </div>
+        <p style="font-size:13px;color:var(--color-text-secondary);margin-bottom:12px;line-height:1.6">"NABL certified lab hai, doctor ne khud recommend kiya. Prices reasonable hain aur reports clear aate hain."</p>
+        <div style="display:flex;align-items:center;gap:8px">
+          <div style="width:30px;height:30px;background:#FBEAF0;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:500;color:#993556">PS</div>
+          <div><div style="font-size:13px;font-weight:500">Priya Singh</div><div style="font-size:11px;color:var(--color-text-secondary)">Civil Lines</div></div>
+        </div>
+      </div>
+      <div class="card">
+        <div style="display:flex;gap:2px;margin-bottom:10px">
+          <i class="ti ti-star-filled" style="color:#EF9F27;font-size:14px" aria-hidden="true"></i>
+          <i class="ti ti-star-filled" style="color:#EF9F27;font-size:14px" aria-hidden="true"></i>
+          <i class="ti ti-star-filled" style="color:#EF9F27;font-size:14px" aria-hidden="true"></i>
+          <i class="ti ti-star-filled" style="color:#EF9F27;font-size:14px" aria-hidden="true"></i>
+          <i class="ti ti-star" style="color:#EF9F27;font-size:14px" aria-hidden="true"></i>
+        </div>
+        <p style="font-size:13px;color:var(--color-text-secondary);margin-bottom:12px;line-height:1.6">"Online booking, payment, report sab ek jagah. Pehle dusri labs mein chakkar lagane padte the."</p>
+        <div style="display:flex;align-items:center;gap:8px">
+          <div style="width:30px;height:30px;background:#E6F1FB;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:500;color:#185FA5">AK</div>
+          <div><div style="font-size:13px;font-weight:500">Anil Kumar</div><div style="font-size:11px;color:var(--color-text-secondary)">Rapti Nagar</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- REPORT ACCESS BANNER -->
+  <div style="background:#085041;border-radius:var(--border-radius-lg);padding:28px 32px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;margin-bottom:40px">
+    <div>
+      <div style="font-size:18px;font-weight:500;color:#fff;margin-bottom:6px">Access your reports anytime</div>
+      <div style="font-size:13px;color:#9FE1CB">Enter your mobile number to view, download, or share your reports instantly.</div>
+    </div>
+    <div style="display:flex;gap:8px;align-items:center">
+      <div style="display:flex;align-items:center;gap:6px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:var(--border-radius-md);padding:10px 14px">
+        <i class="ti ti-phone" style="color:#9FE1CB;font-size:15px" aria-hidden="true"></i>
+        <span style="font-size:13px;color:rgba(255,255,255,0.6)">+91 9876543210</span>
+      </div>
+      <button style="background:#fff;color:#085041;border:none;padding:11px 20px;border-radius:var(--border-radius-md);font-size:13px;font-weight:500;cursor:pointer">View Reports</button>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<div style="background:var(--color-background-primary);border-top:0.5px solid var(--color-border-tertiary);padding:32px 24px 20px">
+  <div style="max-width:1100px;margin:0 auto">
+    <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:32px;margin-bottom:28px">
+      <div>
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px">
+          <div style="width:32px;height:32px;background:#0F6E56;border-radius:8px;display:flex;align-items:center;justify-content:center"><i class="ti ti-stethoscope" style="color:#fff;font-size:16px" aria-hidden="true"></i></div>
+          <div style="font-size:14px;font-weight:500;color:#0F6E56">Gorakhpur Diagnostic Centre</div>
+        </div>
+        <p style="font-size:13px;color:var(--color-text-secondary);line-height:1.7;margin-bottom:12px">NABL-accredited diagnostic lab serving Gorakhpur since 2008. 200+ tests, home collection, digital reports.</p>
+        <div style="font-size:13px;color:var(--color-text-secondary)"><i class="ti ti-map-pin" style="margin-right:4px;font-size:13px" aria-hidden="true"></i>Medical Chowk, Gorakhpur, UP 273001</div>
+        <div style="font-size:13px;color:var(--color-text-secondary);margin-top:4px"><i class="ti ti-phone" style="margin-right:4px;font-size:13px" aria-hidden="true"></i>0551-2200100 · WhatsApp: 9876543210</div>
+      </div>
+      <div>
+        <div style="font-size:13px;font-weight:500;margin-bottom:12px">Tests</div>
+        <div style="display:flex;flex-direction:column;gap:8px;font-size:13px;color:var(--color-text-secondary)">
+          <a style="text-decoration:none;color:var(--color-text-secondary)">Blood Tests</a>
+          <a style="text-decoration:none;color:var(--color-text-secondary)">Urine Tests</a>
+          <a style="text-decoration:none;color:var(--color-text-secondary)">X-Ray &amp; USG</a>
+          <a style="text-decoration:none;color:var(--color-text-secondary)">ECG</a>
+        </div>
+      </div>
+      <div>
+        <div style="font-size:13px;font-weight:500;margin-bottom:12px">Services</div>
+        <div style="display:flex;flex-direction:column;gap:8px;font-size:13px;color:var(--color-text-secondary)">
+          <a style="text-decoration:none;color:var(--color-text-secondary)">Home Collection</a>
+          <a style="text-decoration:none;color:var(--color-text-secondary)">Corporate Health</a>
+          <a style="text-decoration:none;color:var(--color-text-secondary)">Digital Reports</a>
+          <a style="text-decoration:none;color:var(--color-text-secondary)">Doctor Consult</a>
+        </div>
+      </div>
+      <div>
+        <div style="font-size:13px;font-weight:500;margin-bottom:12px">Help</div>
+        <div style="display:flex;flex-direction:column;gap:8px;font-size:13px;color:var(--color-text-secondary)">
+          <a style="text-decoration:none;color:var(--color-text-secondary)">View Reports</a>
+          <a style="text-decoration:none;color:var(--color-text-secondary)">Book a Test</a>
+          <a style="text-decoration:none;color:var(--color-text-secondary)">Contact Us</a>
+          <a style="text-decoration:none;color:var(--color-text-secondary)">Privacy Policy</a>
+        </div>
+      </div>
+    </div>
+    <hr class="divider" style="margin-bottom:14px">
+    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">
+      <div style="font-size:12px;color:var(--color-text-secondary)">© 2024 Gorakhpur Diagnostic Centre Pvt. Ltd. All rights reserved.</div>
+      <div style="display:flex;gap:6px">
+        <span class="badge-green">NABL</span>
+        <span class="badge-green">ISO 15189</span>
+        <span style="background:#E6F1FB;color:#185FA5;font-size:11px;padding:2px 8px;border-radius:999px;font-weight:500">UPI Accepted</span>
+      </div>
+    </div>
+  </div>
+</div>

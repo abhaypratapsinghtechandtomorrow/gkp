@@ -1,0 +1,72 @@
+.tests {
+  background-color: var(--background-primary);
+}
+
+.tests-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 48px;
+}
+
+.tests-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.test-card {
+  background: var(--background-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: all 0.3s ease;
+}
+
+.test-card:hover {
+  border-color: var(--primary-color);
+  box-shadow: 0 4px 12px rgba(15, 110, 86, 0.1);
+}
+
+.test-content {
+  flex: 1;
+}
+
+.test-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.test-desc {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.test-price {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 24px;
+}
+
+.add-btn {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .tests-header {
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+  }
+}

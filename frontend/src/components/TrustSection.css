@@ -1,0 +1,163 @@
+.trust-section {
+  padding: 40px 0;
+  background-color: var(--background-primary);
+}
+
+.top-cards {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.info-card {
+  flex: 1;
+  display: flex;
+  gap: 16px;
+  padding: 24px;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+  transition: transform 0.2s;
+}
+
+.info-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+}
+
+.info-card-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.panels-icon {
+  background: #E8FFFE;
+}
+
+.karma-icon {
+  background: #FFF0ED;
+}
+
+.info-card-text h4 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.info-card-text p {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+.info-btn {
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-yellow {
+  background-color: #FBB040;
+  color: #fff;
+}
+
+.btn-orange {
+  background-color: #F16948;
+  color: #fff;
+}
+
+.why-trust-us {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px 40px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  border: 1px solid var(--border-color);
+}
+
+.trust-title {
+  flex: 0 0 250px;
+  border-right: 1px solid var(--border-color);
+  padding-right: 32px;
+  margin-right: 32px;
+}
+
+.trust-title h3 {
+  font-size: 20px;
+  color: var(--text-primary);
+  font-weight: 400;
+}
+
+.trust-title strong {
+  color: var(--primary-color);
+  font-weight: 800;
+}
+
+.trust-title p {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.trust-features {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+}
+
+.trust-feature {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.feature-icon {
+  background: var(--background-secondary);
+  padding: 8px;
+  border-radius: 50%;
+}
+
+.trust-feature span {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.4;
+}
+
+@media (max-width: 992px) {
+  .top-cards {
+    flex-direction: column;
+  }
+  .why-trust-us {
+    flex-direction: column;
+    text-align: center;
+  }
+  .trust-title {
+    border-right: none;
+    border-bottom: 1px solid var(--border-color);
+    padding-right: 0;
+    margin-right: 0;
+    padding-bottom: 24px;
+    margin-bottom: 24px;
+    flex: auto;
+  }
+  .trust-features {
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: center;
+  }
+}

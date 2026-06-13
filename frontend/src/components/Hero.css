@@ -1,0 +1,153 @@
+.hero {
+  padding: 40px 0;
+  background-color: var(--background-secondary);
+}
+
+.hero-container {
+  background: linear-gradient(to right, #6F4E37 0%, #A67B5B 50%, transparent 100%), url('https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80') right center no-repeat;
+  background-size: cover;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  padding: 60px 40px;
+}
+
+.hero-text-block {
+  margin-bottom: 40px;
+}
+
+.hero-title {
+  font-size: 32px;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 24px;
+  line-height: 1.2;
+}
+
+.hero-price-block {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 24px;
+  color: #fff;
+}
+
+.tests-count, .price-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.tests-count span:first-child, .price-info span:first-child {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.count-value, .price-value {
+  font-size: 36px;
+  font-weight: 800;
+}
+
+.tests-count {
+  padding-right: 24px;
+  border-right: 2px solid rgba(255,255,255,0.3);
+}
+
+.book-now-pill {
+  background: #fff;
+  color: #333;
+  border: none;
+  padding: 8px 24px;
+  border-radius: 24px;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.hero-search-area {
+  max-width: 600px;
+}
+
+.search-pill {
+  display: flex;
+  background: #fff;
+  border-radius: 30px;
+  padding: 6px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  margin-bottom: 24px;
+}
+
+.search-pill .search-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 0 20px;
+  font-size: 16px;
+  border-radius: 30px;
+}
+
+.search-btn-orange {
+  background-color: #F16948;
+  color: #fff;
+  border-radius: 24px;
+  padding: 12px 32px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.search-btn-orange:hover {
+  background-color: #D65A3D;
+}
+
+.trust-markers {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.trust-marker {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,0.9);
+  padding: 8px 12px;
+  border-radius: 8px;
+  flex: 1;
+}
+
+.trust-icon {
+  background: #FFF0ED;
+  padding: 6px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.trust-text {
+  display: flex;
+  flex-direction: column;
+  font-size: 11px;
+  color: var(--text-primary);
+}
+
+.trust-text strong {
+  font-weight: 700;
+}
+
+.trust-text span {
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+@media (max-width: 992px) {
+  .hero-container {
+    background: linear-gradient(rgba(111, 78, 55, 0.9), rgba(111, 78, 55, 0.9)), url('https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3') center;
+  }
+  .trust-markers {
+    flex-direction: column;
+  }
+}
