@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { IconStethoscope, IconMenu2, IconX, IconSun, IconMoon, IconShoppingCart } from '@tabler/icons-react';
+import { IconStethoscope, IconMenu2, IconX, IconShoppingCart, IconMapPinFilled, IconPhone, IconUser, IconChevronDown, IconHome, IconMoonFilled, IconSunFilled } from '@tabler/icons-react';
 import { useCart } from '../context/CartContext';
 import './Navbar.css';
 
@@ -19,10 +19,6 @@ const Navbar = () => {
     }
   }, []);
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
-
   const toggleTheme = () => {
     if (isDarkMode) {
       document.body.classList.remove('dark-mode');
@@ -34,67 +30,90 @@ const Navbar = () => {
     setIsDarkMode(!isDarkMode);
   };
 
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
-    <header className="healthians-header">
+    <header className="healthians-header animate-fade-in-up">
       {/* Top Bar */}
       <div className="top-bar">
         <div className="container top-bar-container">
-          <div className="top-bar-left">
-            <span className="location-selector">
-              <IconStethoscope size={16} />
-              Gorakhpur <span className="arrow-down">▼</span>
-            </span>
+          <a href="/" className="navbar-logo">
+            <div className="logo-icon">
+              <IconStethoscope color="var(--primary-color)" size={36} stroke={2} />
+            </div>
+            <span className="logo-text" style={{ fontSize: '20px' }}>Gorakhpur Diagnostic Centre</span>
+          </a>
+          
+          <div className="top-bar-middle">
+            <div className="location-selector" style={{ cursor: 'default' }}>
+              <IconMapPinFilled size={20} color="#F16948" />
+              <div className="location-text">
+                <span className="loc-label">Service Area</span>
+                <span className="loc-value">Gorakhpur</span>
+              </div>
+            </div>
+
+            <div className="top-action-item clickable" onClick={(e) => { e.preventDefault(); user ? logout() : setIsLoginOpen(true); }}>
+              <IconUser size={20} color="#727272" />
+              <div className="action-text">
+                <span className="action-label">{user ? `Hi, ${user.name}` : 'Welcome'}</span>
+                <span className="action-value">{user ? `Logout` : 'Login / Signup'}</span>
+              </div>
+            </div>
+
+            <div className="top-action-item">
+              <IconPhone size={20} color="#727272" />
+              <div className="action-text">
+                <span className="action-label">Call Us</span>
+                <span className="action-value">+917704866570</span>
+              </div>
+            </div>
+            
+            <button className="theme-toggle-btn btn btn-outline" onClick={toggleTheme} aria-label="Toggle Dark Mode" style={{ padding: '8px', border: 'none', background: 'var(--background-tertiary)' }}>
+              {isDarkMode ? <IconSunFilled size={20} color="#F16948" /> : <IconMoonFilled size={20} color="#00A0A8" />}
+            </button>
           </div>
-          <div className="top-bar-right">
-            <a href="tel:05512200100" className="top-contact">0551-2200100</a>
-            <a href="#" className="top-link">Download App</a>
-            <a href="#" className="top-link login-btn" onClick={(e) => { e.preventDefault(); user ? logout() : setIsLoginOpen(true); }}>
-              {user ? `Logout (${user.name.split(' ')[0]})` : 'Login / Sign up'}
-            </a>
-            <button className="theme-toggle-btn" onClick={toggleTheme} aria-label="Toggle Dark Mode">
-              {isDarkMode ? <IconSun size={16} /> : <IconMoon size={16} />}
+          
+          <div className="top-bar-right-mobile">
+            <button className="theme-toggle-btn btn" onClick={toggleTheme} style={{ padding: '8px', background: 'transparent', border: 'none', marginRight: '8px' }}>
+               {isDarkMode ? <IconSunFilled size={20} color="#F16948" /> : <IconMoonFilled size={20} color="#00A0A8" />}
+            </button>
+            <button className="mobile-menu-btn" onClick={toggleMenu}>
+              {isOpen ? <IconX size={24} color="var(--primary-color)" /> : <IconMenu2 size={24} color="var(--primary-color)" />}
             </button>
           </div>
         </div>
       </div>
 
-      {/* Main Navbar */}
-      <nav className="navbar">
-        <div className="container navbar-container">
-          <a href="/" className="navbar-logo">
-            <img src="/logo.png" alt="Logo" className="healthians-logo-fallback" onError={(e) => {
-              e.target.style.display = 'none';
-              e.target.nextSibling.style.display = 'flex';
-            }} />
-            <div className="logo-fallback" style={{display: 'none', alignItems: 'center', gap: '8px'}}>
-              <div className="logo-icon">
-                <IconStethoscope color="#fff" size={24} />
-              </div>
-              <span className="logo-text">Gorakhpur Diagnostic</span>
-            </div>
-          </a>
-
-          <div className={`navbar-links ${isOpen ? 'active' : ''}`}>
-            <a href="#packages" className="nav-link" onClick={() => setIsOpen(false)}>Packages</a>
-            <a href="#tests" className="nav-link" onClick={() => setIsOpen(false)}>Tests</a>
-            <a href="#organs" className="nav-link" onClick={() => setIsOpen(false)}>Organs</a>
-            <a href="#services" className="nav-link" onClick={() => setIsOpen(false)}>Services</a>
+      {/* Secondary Navbar */}
+      <nav className="secondary-navbar">
+        <div className="container sec-nav-container">
+          <ul className={`sec-nav-links ${isOpen ? 'active' : ''}`}>
+            <li><a href="/" className="nav-home-icon"><IconHome size={18} /></a></li>
+            <li><a href="#full-body">Full Body Checkup <IconChevronDown size={14} /></a></li>
+            <li><a href="#fever">Fever <IconChevronDown size={14} /></a></li>
+            <li><a href="#heart">Heart <IconChevronDown size={14} /></a></li>
+            <li><a href="#thyroid">Thyroid <IconChevronDown size={14} /></a></li>
+            <li><a href="#diabetes">Diabetes <IconChevronDown size={14} /></a></li>
+            <li><a href="#allergy">Allergy <IconChevronDown size={14} /></a></li>
+            <li><a href="#dna" className="new-badge-link">DNA Test <IconChevronDown size={14} /><span className="new-badge">NEW</span></a></li>
             
-            <button className="btn nav-btn" onClick={() => setIsCartOpen(true)} style={{ position: 'relative', background: 'transparent', color: 'var(--primary-color)', border: '1px solid var(--primary-color)', padding: '6px 12px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <li className="mobile-only-cart">
+               <button className="btn nav-cart-btn-mobile" onClick={() => setIsCartOpen(true)}>
+                <IconShoppingCart size={20} />
+                <span>Cart ({cartItems.length})</span>
+              </button>
+            </li>
+          </ul>
+          
+          <div className="desktop-cart">
+             <button className="btn nav-cart-btn-white" onClick={() => setIsCartOpen(true)}>
               <IconShoppingCart size={20} />
-              <span>Cart</span>
-              {cartItems.length > 0 && (
-                <span style={{ position: 'absolute', top: '-8px', right: '-8px', background: 'var(--danger)', color: 'white', borderRadius: '50%', width: '20px', height: '20px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '12px', fontWeight: 'bold' }}>
-                  {cartItems.length}
-                </span>
-              )}
+              {cartItems.length > 0 && <span className="cart-badge-white">{cartItems.length}</span>}
             </button>
-            <button className="btn btn-primary nav-btn">Book Now</button>
           </div>
-
-          <button className="mobile-menu-btn" onClick={toggleMenu}>
-            {isOpen ? <IconX size={24} /> : <IconMenu2 size={24} />}
-          </button>
         </div>
       </nav>
     </header>

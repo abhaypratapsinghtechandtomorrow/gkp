@@ -14,7 +14,7 @@ const TrustSection = () => {
             <div className="info-card-text">
               <h4>We are now empaneled on Government Panels for Health Tests</h4>
               <p>For in-service or retired govt. employees across CGHS, DGEHS, ESIC & Relevant Dept, AIR INDIA, CAPF.</p>
-              <button className="info-btn btn-yellow"><IconPhoneCall size={16}/> Call us: +91-9289902266</button>
+              <button className="info-btn btn-yellow"><IconPhoneCall size={16}/> Call us: +917704866570</button>
             </div>
           </div>
           

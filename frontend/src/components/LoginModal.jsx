@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import axios from 'axios';
 import { useCart } from '../context/CartContext';
 import { IconX } from '@tabler/icons-react';
 import './LoginModal.css';
@@ -7,8 +6,8 @@ import './LoginModal.css';
 const LoginModal = () => {
   const { isLoginOpen, setIsLoginOpen, login } = useCart();
   const [isRegister, setIsRegister] = useState(false);
-  
-  const [formData, setFormData] = useState({ name: '', email: '', password: '' });
+
+  const [formData, setFormData] = useState({ name: '', mobile: '', password: '' });
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
 
@@ -24,17 +23,51 @@ const LoginModal = () => {
     setLoading(true);
 
     try {
-      const endpoint = isRegister ? '/api/auth/register' : '/api/auth/login';
-      const response = await axios.post(`http://localhost:5000${endpoint}`, formData);
-      
-      // Call the context login function
-      login(response.data.token, response.data.user);
-      
+      // Retrieve local database
+      const existingUsers = JSON.parse(localStorage.getItem('usersDB') || '[]');
+
+      if (isRegister) {
+        // Registration Logic
+        if (existingUsers.find(u => u.mobile === formData.mobile)) {
+          throw new Error('Mobile number already registered.');
+        }
+
+        const newUser = {
+          id: 'user_' + Date.now(),
+          name: formData.name,
+          mobile: formData.mobile,
+          password: formData.password // Simple local storage plain text
+        };
+
+        existingUsers.push(newUser);
+        localStorage.setItem('usersDB', JSON.stringify(existingUsers));
+
+        login('local-token-' + newUser.id, newUser);
+      } else {
+        // Login Logic
+        // Special Admin Login
+        if (formData.mobile === '8874141046' && formData.password === '1234') {
+          const adminUser = {
+            id: 'admin_1',
+            name: 'Administrator',
+            mobile: '8874141046',
+            isAdmin: true
+          };
+          login('admin-token-123', adminUser);
+        } else {
+          const user = existingUsers.find(u => u.mobile === formData.mobile && u.password === formData.password);
+          if (!user) {
+            throw new Error('Invalid mobile number or password.');
+          }
+          login('local-token-' + user.id, user);
+        }
+      }
+
       // Reset form
-      setFormData({ name: '', email: '', password: '' });
+      setFormData({ name: '', mobile: '', password: '' });
       setIsRegister(false);
     } catch (err) {
-      setError(err.response?.data?.message || 'Authentication failed. Make sure backend is connected to MongoDB.');
+      setError(err.message || 'Authentication failed.');
     } finally {
       setLoading(false);
     }
@@ -46,55 +79,55 @@ const LoginModal = () => {
         <button className="modal-close" onClick={() => setIsLoginOpen(false)}>
           <IconX size={20} />
         </button>
-        
+
         <h2 className="modal-title">{isRegister ? 'Create Account' : 'Welcome Back'}</h2>
-        
+
         {error && <div className="modal-error">{error}</div>}
-        
+
         <form onSubmit={handleSubmit} className="login-form">
           {isRegister && (
             <div className="form-group">
               <label>Full Name</label>
-              <input 
-                type="text" 
-                name="name" 
-                value={formData.name} 
-                onChange={handleChange} 
-                required 
-                placeholder="John Doe"
+              <input
+                type="text"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                required
+                placeholder="Enter Your Name"
               />
             </div>
           )}
-          
+
           <div className="form-group">
-            <label>Email Address</label>
-            <input 
-              type="email" 
-              name="email" 
-              value={formData.email} 
-              onChange={handleChange} 
-              required 
-              placeholder="you@example.com"
+            <label>Mobile Number</label>
+            <input
+              type="tel"
+              name="mobile"
+              value={formData.mobile}
+              onChange={handleChange}
+              required
+              placeholder="Enter Your Mobile Number"
             />
           </div>
-          
+
           <div className="form-group">
             <label>Password</label>
-            <input 
-              type="password" 
-              name="password" 
-              value={formData.password} 
-              onChange={handleChange} 
-              required 
+            <input
+              type="password"
+              name="password"
+              value={formData.password}
+              onChange={handleChange}
+              required
               placeholder="••••••••"
             />
           </div>
-          
+
           <button type="submit" className="btn btn-primary submit-btn" disabled={loading}>
             {loading ? 'Processing...' : (isRegister ? 'Sign Up' : 'Login')}
           </button>
         </form>
-        
+
         <div className="modal-toggle">
           {isRegister ? (
             <p>Already have an account? <button onClick={() => setIsRegister(false)}>Login</button></p>

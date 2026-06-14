@@ -1,0 +1,115 @@
+.floating-contacts {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.floating-widget {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  text-decoration: none;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.floating-tooltip {
+  background-color: var(--background-primary);
+  color: var(--text-primary);
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: var(--card-shadow);
+  border: 1px solid var(--border-color);
+  white-space: nowrap;
+}
+
+.floating-icon-wrapper {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.whatsapp-icon {
+  background-color: #25D366; 
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+}
+
+.call-icon {
+  background-color: #00A0A8; 
+  box-shadow: 0 4px 12px rgba(0, 160, 168, 0.4);
+}
+
+.floating-icon-wrapper::before {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border-radius: 50%;
+  z-index: -1;
+  animation: pulse-floating 2s infinite;
+}
+
+.whatsapp-icon::before {
+  background-color: rgba(37, 211, 102, 0.2);
+}
+
+.call-icon::before {
+  background-color: rgba(0, 160, 168, 0.2);
+}
+
+.floating-widget:hover {
+  transform: translateX(-4px);
+}
+
+.whatsapp-widget:hover .whatsapp-icon {
+  background-color: #128C7E;
+  box-shadow: 0 6px 16px rgba(37, 211, 102, 0.5);
+}
+
+.call-widget:hover .call-icon {
+  background-color: #007D84;
+  box-shadow: 0 6px 16px rgba(0, 160, 168, 0.5);
+}
+
+@keyframes pulse-floating {
+  0% { transform: scale(0.95); opacity: 1; }
+  100% { transform: scale(1.2); opacity: 0; }
+}
+
+@media (max-width: 768px) {
+  .floating-contacts {
+    bottom: 16px;
+    right: 16px;
+    gap: 12px;
+  }
+  
+  .floating-icon-wrapper {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .floating-icon-wrapper svg {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .floating-tooltip {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+}

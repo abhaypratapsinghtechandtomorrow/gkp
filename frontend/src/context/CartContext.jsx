@@ -1,5 +1,4 @@
 import React, { createContext, useState, useContext, useEffect } from 'react';
-import axios from 'axios';
 
 const CartContext = createContext();
 
@@ -76,18 +75,22 @@ export const CartProvider = ({ children }) => {
           type: item.type || 'test',
           price: item.price
         })),
-        totalAmount: getCartTotal()
+        date: new Date().toISOString()
       };
 
-      await axios.post('http://localhost:5000/api/bookings', payload, {
-        headers: { Authorization: `Bearer ${token}` }
-      });
+      // Save to LocalStorage Database
+      const existingBookings = JSON.parse(localStorage.getItem('bookingsDB') || '[]');
+      existingBookings.push(payload);
+      localStorage.setItem('bookingsDB', JSON.stringify(existingBookings));
+
+      await new Promise(resolve => setTimeout(resolve, 800));
+      console.log('Saved to LocalStorage Database:', payload);
       
       clearCart();
       setIsCartOpen(false);
       return { success: true, message: 'Booking successful!' };
     } catch (error) {
-      return { success: false, message: error.response?.data?.message || 'Checkout failed' };
+      return { success: false, message: 'Checkout failed' };
     }
   };
 

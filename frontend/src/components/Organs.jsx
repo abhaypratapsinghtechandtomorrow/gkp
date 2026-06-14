@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import { IconHeartbeat, IconBone, IconActivity, IconStethoscope } from '@tabler/icons-react';
+import React, { useState } from 'react';
+import { IconHeartbeat, IconBone, IconActivity, IconStethoscope, IconRipple, IconLungs, IconDropCircle } from '@tabler/icons-react';
+import { organs as mockOrgans } from '../data/mockData';
 import './Organs.css';
 
 const organIcons = {
@@ -9,26 +9,14 @@ const organIcons = {
   'sugar': <IconActivity size={32} color="#993556" />,
   'liver': <IconStethoscope size={32} color="#BA7517" />,
   'kidneys': <IconStethoscope size={32} color="#3B6D11" />,
-  'thyroid': <IconStethoscope size={32} color="#185FA5" />
+  'thyroid': <IconStethoscope size={32} color="#185FA5" />,
+  'blood': <IconDropCircle size={32} color="#D32F2F" />,
+  'lungs': <IconLungs size={32} color="#4CAF50" />,
+  'general': <IconRipple size={32} color="#5C6BC0" />
 };
 
 const Organs = () => {
-  const [organs, setOrgans] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchOrgans = async () => {
-      try {
-        const response = await axios.get('http://localhost:5000/api/organs');
-        setOrgans(response.data);
-      } catch (error) {
-        console.error('Error fetching organs:', error);
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchOrgans();
-  }, []);
+  const [organs] = useState(mockOrgans);
 
   return (
     <section id="organs" className="section organs">
@@ -37,10 +25,7 @@ const Organs = () => {
           Book Test by Organs
         </h2>
         
-        {loading ? (
-          <div className="loading">Loading organs...</div>
-        ) : (
-          <div className="organs-grid">
+        <div className="organs-grid">
             {organs.map((organ, index) => (
               <div key={organ.id} className={`organ-card animate-fade-in-up delay-${(index % 6 + 1) * 100}`}>
                 <div className="organ-icon-circle">
@@ -51,7 +36,6 @@ const Organs = () => {
               </div>
             ))}
           </div>
-        )}
       </div>
     </section>
   );

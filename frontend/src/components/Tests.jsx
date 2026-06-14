@@ -1,27 +1,12 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import React, { useState } from 'react';
 import { IconShoppingCart } from '@tabler/icons-react';
 import { useCart } from '../context/CartContext';
+import { tests as mockTests } from '../data/mockData';
 import './Tests.css';
 
 const Tests = () => {
-  const [tests, setTests] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [tests] = useState(mockTests);
   const { addToCart } = useCart();
-
-  useEffect(() => {
-    const fetchTests = async () => {
-      try {
-        const response = await axios.get('http://localhost:5000/api/tests');
-        setTests(response.data);
-      } catch (error) {
-        console.error('Error fetching tests:', error);
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchTests();
-  }, []);
 
   return (
     <section id="tests" className="section tests">
@@ -31,10 +16,7 @@ const Tests = () => {
           <button className="btn btn-outline">View All Tests</button>
         </div>
 
-        {loading ? (
-          <div className="loading">Loading tests...</div>
-        ) : (
-          <div className="tests-grid">
+        <div className="tests-grid">
             {tests.map((test, index) => {
               const delayClass = `delay-${(index % 3 + 1) * 100}`;
               return (
@@ -53,7 +35,6 @@ const Tests = () => {
               </div>
             )})}
           </div>
-        )}
       </div>
     </section>
   );

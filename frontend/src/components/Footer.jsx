@@ -1,32 +1,16 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import { IconStethoscope, IconMapPin, IconPhone } from '@tabler/icons-react';
+import React, { useState } from 'react';
+import { IconStethoscope, IconMapPin, IconPhone, IconMail, IconBrandWhatsapp } from '@tabler/icons-react';
+import { tests as mockTests, services as mockServices, contact as mockContact } from '../data/mockData';
+import { useCart } from '../context/CartContext';
 import './Footer.css';
 
 const Footer = () => {
-  const [tests, setTests] = useState([]);
-  const [services, setServices] = useState([]);
-  const [contact, setContact] = useState(null);
+  const [quickTests] = useState(mockTests.filter(t => t.popular).slice(0, 4));
+  const [quickServices] = useState(mockServices.slice(0, 4));
+  const [contactInfo] = useState(mockContact);
+  const { user } = useCart();
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const [testsRes, servicesRes, contactRes] = await Promise.all([
-          axios.get('http://localhost:5000/api/tests'),
-          axios.get('http://localhost:5000/api/services'),
-          axios.get('http://localhost:5000/api/contact')
-        ]);
-        setTests(testsRes.data);
-        setServices(servicesRes.data);
-        setContact(contactRes.data);
-      } catch (error) {
-        console.error('Error fetching footer data:', error);
-      }
-    };
-    fetchData();
-  }, []);
-
-  if (!contact) return null;
+  if (!contactInfo) return <footer className="footer"><div className="container">Loading...</div></footer>;
 
   return (
     <footer id="contact" className="footer">
@@ -37,7 +21,7 @@ const Footer = () => {
               <div className="logo-icon">
                 <IconStethoscope color="#fff" size={16} />
               </div>
-              <span className="logo-text" style={{ fontSize: '16px' }}>{contact.name}</span>
+              <span className="logo-text" style={{ fontSize: '16px' }}>{contactInfo.name}</span>
             </div>
             <p className="footer-desc">
               NABL-accredited diagnostic lab serving Gorakhpur since 2008. 
@@ -46,11 +30,11 @@ const Footer = () => {
             <div className="contact-info">
               <div className="contact-item">
                 <IconMapPin size={16} />
-                <span>{contact.address}</span>
+                <span>{contactInfo.address}</span>
               </div>
               <div className="contact-item">
                 <IconPhone size={16} />
-                <span>{contact.phone} &middot; WhatsApp: {contact.whatsapp}</span>
+                <span>{contactInfo.phone} &middot; WhatsApp: {contactInfo.whatsapp}</span>
               </div>
             </div>
           </div>
@@ -58,7 +42,7 @@ const Footer = () => {
           <div className="footer-links-group">
             <h4 className="footer-title">Popular Tests</h4>
             <ul className="footer-links">
-              {tests.filter(t => t.popular).slice(0, 4).map(test => (
+              {quickTests.map(test => (
                 <li key={test.id}><a href="#">{test.name}</a></li>
               ))}
             </ul>
@@ -67,7 +51,7 @@ const Footer = () => {
           <div className="footer-links-group">
             <h4 className="footer-title">Services</h4>
             <ul className="footer-links">
-              {services.slice(0, 4).map(service => (
+              {quickServices.map(service => (
                 <li key={service.id}><a href="#">{service.title}</a></li>
               ))}
             </ul>
@@ -79,6 +63,9 @@ const Footer = () => {
               <li><a href="#">Privacy Policy</a></li>
               <li><a href="#">Terms of Service</a></li>
               <li><a href="#">Refund Policy</a></li>
+              {user && user.isAdmin && (
+                <li><a href="#admin" style={{ color: '#00A0A8' }}>Admin Panel</a></li>
+              )}
             </ul>
           </div>
         </div>
